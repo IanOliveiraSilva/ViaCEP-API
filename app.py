@@ -4,7 +4,7 @@ import requests
 app = Flask(__name__)
 
 @app.route('/')
-def home():
+def index():
     return render_template('index.html')
 
 @app.route('/cep')
@@ -19,6 +19,7 @@ def get_address():
         response = requests.get(url)
         if response.status_code == 200:
             data = response.json()
+            print(data)
             return render_template('address.html', data=data)
         else:
             return jsonify({'erro': 'CEP não encontrado'})
@@ -40,8 +41,7 @@ def get_cep():
     try:
         response = requests.get(url)
         if response.status_code == 200:
-            data = response.json()
-            print(data)
+            data = response.json()[0]
             return render_template('address.html', data=data)
         else:
             return jsonify({'erro': 'CEP não encontrado'})
