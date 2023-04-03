@@ -1,48 +1,53 @@
-const estadosSelect = document.getElementById("estados");
-const municipiosSelect = document.getElementById("municipios");
+// JS
+let estadoSigla = "";
+let municipioNome = "";
 
-const API_URL = "https://servicodados.ibge.gov.br/api/v1/localidades";
+// Inicializar o Select2 para os selects de estados e municípios
+$('.select2').select2();
 
-// Função que cria as opções do select de estados
-function popularEstados(estados) {
-    for (const estado of estados) {
-        const option = document.createElement("option");
-        option.value = estado.sigla;
-        option.textContent = estado.sigla;
-        estadosSelect.appendChild(option);
-    }
-}
-
-// Função que cria as opções do select de municípios
-function popularMunicipios(municipios) {
-    // Limpa as opções do select de municípios
-    municipiosSelect.innerHTML = "";
-    // Adiciona as novas opções
-    for (const municipio of municipios) {
-        const option = document.createElement("option");
-        option.value = municipio.nome;
-        option.textContent = municipio.nome;
-        municipiosSelect.appendChild(option);
-    }
-}
-
-// Requisição GET para obter a lista de estados
-fetch(`${API_URL}/estados`)
-    .then(response => response.json())
-    .then(estados => {
-        // Preenche o select de estados com os dados obtidos da API
-        popularEstados(estados);
+// Obter dados dos estados da API do IBGE
+$.ajax({
+  url: 'https://servicodados.ibge.gov.br/api/v1/localidades/estados',
+  dataType: 'json',
+  success: function(data) {
+    // Preencher o select de estados
+    $.each(data, function(i, estado) {
+      $('#estados').append($('<option>', {
+        value: estado.sigla,
+        text: estado.nome
+      }));
     });
+  }
+});
 
-// Evento disparado quando o usuário seleciona um estado
-estadosSelect.addEventListener("change", () => {
-    const uf = estadosSelect.value; // Pega a sigla do estado selecionado
-
-    // Requisição GET para obter a lista de municípios do estado selecionado
-    fetch(`${API_URL}/estados/${uf}/municipios`)
-        .then(response => response.json())
-        .then(municipios => {
-            // Preenche o select de municípios com os dados obtidos da API
-            popularMunicipios(municipios);
+// Quando um estado é selecionado, obter dados dos municípios correspondentes da API do IBGE
+$('#estados').on('change', function() {
+  estadoSigla = $(this).val();
+  if (estadoSigla) {
+    $.ajax({
+      url: 'https://servicodados.ibge.gov.br/api/v1/localidades/estados/' + estadoSigla + '/municipios',
+      dataType: 'json',
+      success: function(data) {
+        // Limpar o select de municípios e preencher com os dados obtidos
+        $('#municipios').empty().append($('<option>', {
+          value: '',
+          text: 'Selecione um município'
+        }));
+        $.each(data, function(i, municipio) {
+          $('#municipios').append($('<option>', {
+            value: municipio.nome,
+            text: municipio.nome,
+            'data-nome': municipio.nome
+          }));
         });
+        // Atualizar o Select2 para o select de municípios com os novos dados
+        $('#municipios').trigger('change.select2');
+      }
+    });
+  }
+});
+
+// Quando um município é selecionado, atualizar a variável municipioNome com o valor selecionado
+$('#municipios').on('change', function() {
+  municipioNome = $(this).find(':selected').data('nome');
 });

@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Resultado da busca de CEP</title>
+    <title>Resultado da busca</title>
     <link href="/static/css/style.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <h1>Resultado da busca de CEP</h1>
+    <div class="container">
+    <h1>Resultado da busca</h1>
     {% if data %}
     <table>
       <tr>
@@ -46,6 +47,7 @@
       <p>CEP não encontrado</p>
 
     {% endif %}
-
+    <a href="/"><button type="submit" label="home">Home</button></a>
+  </div>
   </body>
 </html>

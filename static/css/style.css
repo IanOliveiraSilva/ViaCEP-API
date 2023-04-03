@@ -1,67 +1,87 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-  }
-  h1 {
-    text-align: center;
-    color: #333;
-    margin-top: 30px;
-  }
-  form {
-    margin: 0 auto;
-    max-width: 500px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  }
-  label {
-    display: block;
-    margin-bottom: 10px;
-    color: #333;
-  }
-  input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 2px solid #ccc;
-    font-size: 16px;
-  }
-  input[type="submit"] {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  input[type="submit"]:hover {
-    background-color: #666;
-  }
-  table {
-    margin: 0 auto;
-    max-width: 800px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  }
-  th {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    text-align: left;
-  }
-  td {
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-  }
-  .label {
-    font-weight: bold;
-    color: #666;
-    margin-right: 10px;
-  }
-  .value {
-    color: #333;
-  }
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+.container {
+  text-align: center;
+  width: 50%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-top: 30px;
+}
+form {
+  text-align: left;
+}
+label {
+  display: block;
+  margin-bottom: 10px;
+  color: #333;
+}
+button{
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+select{
+  width: 42%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid #ccc;
+}
+input[type="text"] {
+  width: 95%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid #ccc;
+  font-size: 16px;
+}
+input[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+input[type="submit"]:hover {
+  background-color: #666;
+}
+table {
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+th {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: left;
+}
+td {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+.label {
+  font-weight: bold;
+  color: #666;
+  margin-right: 10px;
+}
+.value {
+  color: #333;
+}
