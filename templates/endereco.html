@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Busca de CEP</title>
+    <link href="/static/css/style.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <form action="/pesquisa_cep" method="post">
+      <label for="logradouro">Logradouro:</label>
+      <input type="text" id="logradouro" name="logradouro">
+      <label for="estados">Selecione um estado:</label>
+      <select name="select" id="estados"></select>
+      <br><br>
+      <label for="municipios">Selecione um município:</label>
+      <select name="select2" id="municipios"></select>
+      <input type="submit" value="Buscar">
+    </form>
+    
+    <script src="/static/js/script.js"></script>
+  </body>
+</html>
