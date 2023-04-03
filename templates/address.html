@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Endereço</title>
+  </head>
+  <body>
+    <h1>Endereço</h1>
+    {% if data %}
+      <p>CEP: {{ data.cep }}</p>
+      <p>Logradouro: {{ data.logradouro }}</p>
+      <p>Complemento: {{ data.complemento }}</p>
+      <p>Bairro: {{ data.bairro }}</p>
+      <p>Cidade: {{ data.localidade }}</p>
+      <p>Estado: {{ data.uf }}</p>
+    {% else %}
+      <p>CEP não encontrado</p>
+    {% endif %}
+  </body>
+</html>
