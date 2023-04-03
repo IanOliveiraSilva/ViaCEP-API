@@ -3,10 +3,10 @@
 Comandos para rodar:
 
 
-Pip install flask
+Pip install flask (no terminal)
 
 
-python app.py
+python app.py (no terminal)
 
 
 localhost:5000 (no navegador)
