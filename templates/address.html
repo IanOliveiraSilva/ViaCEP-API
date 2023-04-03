@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Resultado da busca de CEP</title>
+
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -71,9 +72,21 @@
         <td class="label">Estado:</td>
         <td class="value">{{data.uf}}</td>
       </tr>
+      <tr>
+        <td class="label">IBGE:</td>
+        <td class="value">{{data.ibge}}</td>
+      </tr>
+      <tr>
+        <td class="label">DDD:</td>
+        <td class="value">{{data.ddd}}</td>
+      </tr>
+  
     </table>
+
     {% else %}
       <p>CEP não encontrado</p>
+
     {% endif %}
+
   </body>
 </html>
