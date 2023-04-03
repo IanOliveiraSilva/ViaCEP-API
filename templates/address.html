@@ -1,17 +1,77 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Endereço</title>
+    <title>Resultado da busca de CEP</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+      }
+      h1 {
+        text-align: center;
+        color: #333;
+        margin-top: 30px;
+      }
+      table {
+        margin: 0 auto;
+        max-width: 800px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+      th {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        text-align: left;
+      }
+      td {
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+      }
+      .label {
+        font-weight: bold;
+        color: #666;
+        margin-right: 10px;
+      }
+      .value {
+        color: #333;
+      }
+    </style>
   </head>
   <body>
-    <h1>Endereço</h1>
+    <h1>Resultado da busca de CEP</h1>
     {% if data %}
-      <p>CEP: {{ data.cep }}</p>
-      <p>Logradouro: {{ data.logradouro }}</p>
-      <p>Complemento: {{ data.complemento }}</p>
-      <p>Bairro: {{ data.bairro }}</p>
-      <p>Cidade: {{ data.localidade }}</p>
-      <p>Estado: {{ data.uf }}</p>
+    <table>
+      <tr>
+        <th colspan="2">Endereço</th>
+      </tr>
+      <tr>
+        <td class="label">CEP:</td>
+        <td class="value">{{data.cep}}</td>
+      </tr>
+      <tr>
+        <td class="label">Logradouro:</td>
+        <td class="value">{{data.logradouro}}</td>
+      </tr>
+      <tr>
+        <td class="label">Complemento:</td>
+        <td class="value">{{data.complemento}}</td>
+      </tr>
+      <tr>
+        <td class="label">Bairro:</td>
+        <td class="value">{{data.bairro}}</td>
+      </tr>
+      <tr>
+        <td class="label">Cidade:</td>
+        <td class="value">{{data.localidade }}</td>
+      </tr>
+      <tr>
+        <td class="label">Estado:</td>
+        <td class="value">{{data.uf}}</td>
+      </tr>
+    </table>
     {% else %}
       <p>CEP não encontrado</p>
     {% endif %}
