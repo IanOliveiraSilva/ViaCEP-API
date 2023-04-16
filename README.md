@@ -38,7 +38,6 @@ Inicialize o servidor
 
 ```
 python app.py
- 
 ```
 
 
