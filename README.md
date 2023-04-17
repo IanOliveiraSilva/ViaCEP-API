@@ -43,7 +43,10 @@ python app.py
 
 ## Colaboradores
 
-- [@IanOliveiraSilva](https://github.com/IanOliveiraSilva)
-- [@mgabrielef](https://github.com/mgabrielef)
-- [@David-Alvess](https://github.com/David-Alvess)
+- Davi Ferreira
+- David Alves
+- Emily Yasmin
+- Ian Oliveira
+- Maria Gabriele
+
 
