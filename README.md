@@ -1,8 +1,8 @@
-# ViaCEP-API
+# FindMyCEP
 
 Projeto feito para a disciplina de Tópicos Especiais em Sistemas para Internet.\
 \
-Projeto de nome FindMyCEP retorna os dados de um endereço de acordo com o CEP ou logradouro apresentado pelo usuário. Foram utilizadas a API ViaCEP, para encontrar os dados do endereço, e a API do IBGE, para selecionar os Estados e municípios.
+Projeto retorna os dados de um endereço de acordo com o CEP ou logradouro apresentado pelo usuário. Foram utilizadas a API ViaCEP, para encontrar os dados do endereço, e a API do IBGE, para selecionar os Estados e municípios.
 
 
 ## Tecnologias
